@@ -1,4 +1,4 @@
 # socialbay
-Visit [SocialBay](socialbay.herokuapp.com)
+Visit [SocialBay](https://socialbay.herokuapp.com/)
 
 Installation Process Coming Soon.......
