@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block title %}Register{% endblock title %}
+{% block registeractive %}active{% endblock registeractive %}
+{% load crispy_forms_tags %}
+{% block body%}
+<style>
+  .article{
+    background: linear-gradient(to top right, #ffffcc 0%, #ccff33 100%);
+
+  }
+</style>
+{% if user.is_authenticated %}
+<center><h1 >Hurray, You are Authenticated!!!</h1>
+
+<a href="/social/new">Start Now</a>
+</center>
+
+{% else %}
+</br>
+<div class="container">
+
+          <center>
+            <h2>Already have an Account? <a type="button" class="btn btn-primary" href="{% url  'login'  %}">Login</a></h2>
+
+          </center>
+  <div   style="background: linear-gradient(to top right, #ccffcc 0%, #ffff00 100%);border-radius: 10px;box-shadow: 10px 10px 5px grey;;">
+    <div class="row">
+      <div class="col-lg-6 col-md-12" style="background-color: white;">
+        <div class="about-image">
+        <center>
+          <img style="padding-top:60px; width:90%;" src="https://image.freepik.com/free-vector/account-concept-illustration_114360-399.jpg" alt="About us" class="img-fluid" >
+        </center>
+        </div>
+      </div>
+    <div class="col-lg-6 col-md-12 about-title">
+      <center>
+        <h2 class="text-uppercase pt-5">
+          <span>Register Now!</span>
+        </h2>
+        <div class="paragraph py w-75">
+          <form method="POST">
+ 
+            {% csrf_token %}
+            <fieldset class="form-group">
+             
+            {{ form|crispy }}
+            </fieldset>
+              <div class="form-group">
+                 <button class="btn btn-outline-info" type="submit">Sign Up</button>
+              </div>
+          </form>
+        
+        </div>
+  </div>
+  </div>
+  </div>  
+
+        
+    </div>
+  </div>
+</br>
+</br>
+
+  {% endif %}
+  
+   
+{% endblock body%}

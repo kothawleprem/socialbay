@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Itim&family=Metal+Mania&display=swap&family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    
+    <script src="https://kit.fontawesome.com/120b98d6e2.js" crossorigin="anonymous"></script>
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+
+    <title>{% block title %} {% endblock title %}</title>
+  </head>
+  
+  <style>
+  h3{
+  font-family: 'Dancing Script', cursive;
+  }
+  body {
+    background: white;
+  }
+  .navbar {
+  
+    border-radius:10px;
+    
+  }
+  a{
+    font-family: 'Kaushan Script', cursive;
+    font-size: large;
+  }
+  </style>
+
+<div class="container navigation">
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item  {% block homeactive %}{% endblock homeactive %}">
+            <a  class="nav-link btn" href="/">Home <span class="sr-only">(current)</span></a>
+          </li>
+            <li class="nav-item {% block contactactive %}{% endblock contactactive %}">
+              <a class="nav-link" href="/contact">Contact</a>
+          </li>
+            
+        </ul>
+    </div>
+    <div class="mx-auto order-0">
+        <a class="navbar-brand mx-auto" href="/home"><img src="https://i.ibb.co/pPpwdBB/capture-20200926143947.png" alt="socialbay-logo" style="width:100%; border-radius: 10px;"></a>
+    <!--    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+            <span class="navbar-toggler-icon"></span>
+        </button> -->
+    </div>
+    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+        <ul class="navbar-nav ml-auto">
+            {% if user.is_authenticated %}
+          <li class="nav-item {% block profileactive %}  ml-auto  {% endblock profileactive %}">
+              <a class="nav-link" href="{% url 'profile' %}">Profile</a>
+          </li>
+          <li class="nav-item {% block logoutactive %}{% endblock logoutactive %}">
+              <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+          </li>
+            {% else %}
+          <li class="nav-item {% block registeractive %}{% endblock registeractive %}">
+              <a class="nav-link" href="{% url 'register' %}">Register</a>
+          </li>
+          <li class="nav-item {% block loginactive %}{% endblock loginactive %}">
+              <a class="nav-link" href="{% url 'login' %}">Login</a>
+          </li>
+          {% endif %}
+        </ul>
+      </nav>
+  </div>
+
+
+        
+
+    {% block body %}
+      
+    {% endblock body %}
+
+
+
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ee8ce99aabd2702"></script>
+
+    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    
+  
+</html>

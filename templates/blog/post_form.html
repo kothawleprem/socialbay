@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}Post-Form{% endblock title %}
+
+{% load crispy_forms_tags %}
+{% block body%}
+<style>
+.article{
+    background: linear-gradient(to top right, #ffffff 0%, #cc3300 100%);
+}
+</style>
+</br>
+<div class="container">
+<div class="alert alert-warning" role="alert">
+  Note: For links, example : https://www.facebook.com/username
+</div>
+
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <article class="article card mb-4">
+                <div class="card-body">
+                    <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <fieldset class="form-group">
+                        <legend class="border-bottom mb-4">Let's Post!</legend>
+                        {{ form|crispy }}
+                    </fieldset>
+                        <div class="form-group">
+                            <button class="btn btn-outline-info" type="submit">Post</button>
+                        </div>
+                    </form>
+                </div>  
+            </article><!-- /.card -->
+        </div>
+    </div>
+</div>
+
+{% endblock body%}

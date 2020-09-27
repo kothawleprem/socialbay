@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block title %}Login{% endblock title %}
+{% block loginactive %}active{% endblock loginactive %}
+
+{% load crispy_forms_tags %}
+{% block body%}
+<style>
+  .article{
+    background: linear-gradient(to top right, #ffffcc 0%, #ccff33 100%);
+
+  }
+  
+</style>
+<main class="main pt-3">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 mx-auto">
+        </br>
+      </br>
+          <center>
+            <h2>Need an Account? <a type="button" class="btn btn-light" href="{% url  'register'  %}">Sign Up</a></h2>
+
+          </center>
+     
+    
+    </br>
+  </br>
+</br>
+    
+          <article class="article card mb-4">
+            <header class="card-header text-center">
+              <h1 class="card-title">Log In</h1>
+            </header>
+            <div class="card-body">
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4"></legend>
+            {{ form|crispy }}
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit">Login</button>
+            <small class="text-muted ml-2">
+            <a href="{% url 'password_reset' %}">Forgot Password</a>
+            </small>
+
+        </div>
+    </form>
+   
+</div>
+</div>
+
+          </article><!-- /.card -->
+
+        </div>
+      </div>
+    </div>
+
+  </main>
+  {% endblock body %}

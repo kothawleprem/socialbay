@@ -1,0 +1,96 @@
+<style>
+.project-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    border: 1px solid #e6ff03;
+    border-radius: 5px;
+    padding: 20px;
+    transform: translateZ(0);
+    transition: transform 0.25s ease-out;
+    margin: 10px;
+    font-weight: 600;
+    width: 1000px;
+    flex-grow: 1;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+.card{
+    transform: translateZ(0);
+    transition: transform 0.25s ease-out;
+
+}
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+@media only screen and (max-width: 600px) {
+    
+    .project-card {
+        margin-left: 5%;
+        width: 90%;
+    }
+}
+.project-card > p {
+    margin: 0;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+h2{
+  color: white;
+  font-family: 'Metal Mania', cursive;
+}
+#effect{
+  color: rgb(0, 0, 0);
+  font-family: 'Itim', cursive;
+  font-size: 45px;
+
+}
+</style>
+<center>
+  <div id="effect"></div> 
+  <div class="project-card">
+     
+    <h2>SocialBay is your Social Media Account sharing platform.</h2>
+    </br>
+    
+    <div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
+      <div class="card-header">Why SocialBay?</div>
+      <div class="card-body">
+        <h5 class="card-title">#Let's Connect</h5>
+        <p class="card-text">Let all your friends/co-workers know you are on Social Media. A single page dedicated only to all your accounts</p>
+      </div>
+    </div>
+  
+  </br>
+  <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+    <div class="card-header">How to start?</div>
+    <div class="card-body">
+      <h5 class="card-title">Only 3 Steps to Start.</h5>
+      <p class="card-text"><li>Create your Account for free.</li><li>Create Your Links Post.</li><li>Share with your Friends </li></p>
+      <a type="button" class="btn btn-light" href="/register">Let's Start</a>
+    </div>
+  </div>
+  </div>
+</center>
+
+
+<script>
+  var x=0;
+  var textEffect = "Welcome to SocialBay"
+  var container = document.getElementById('effect');
+
+  function animate() {
+    if(x < textEffect.length){
+      container.innerHTML += textEffect.charAt(x);
+      x++;
+      setTimeout(animate, 80);
+    }
+  }
+  animate();
+</script>
