@@ -3,6 +3,8 @@
 <link href="https://fonts.googleapis.com/css?family=Patua+One&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Baloo+Thambi+2&display=swap" rel="stylesheet">
 <link href="http://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
 
 
 {% extends 'base.html' %}
@@ -73,6 +75,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-6 col-md-12">
+       <div data-aos="fade-up-right">
         <div class="top-img" style="padding-top:65px;padding-left:70px;">
         </center>
         <div id="effect"></div>
@@ -82,6 +85,7 @@
               <a type="button" class="btn btn-success" href="/register">Register</a>
          </br>
          </div>
+
             <div class="col-lg-3 col-md-12" style="padding-right:7px; padding-bottom: 20px;padding-left:25px;">
               <a type="button" class="btn btn-primary" href="/login">Login</i></a>
             </br>
@@ -92,11 +96,13 @@
             </br>
            </div>
           </div>
-       
+       </div>
         </center>
         </div>
       </div>
+      
       <div class="col-lg-6 col-md-12">
+      <div data-aos="fade-up-left">
         <div class="top-details" style="padding-top:40px;">
           <center>
           <img src="https://landkit.goodthemes.co/assets/img/illustrations/illustration-2.png" alt="" class="banner-img">
@@ -106,14 +112,16 @@
       </div>
     </div>
   </div>
+  </div>
 </br></br></br>
   <center>
+   <div data-aos="fade-down">
     <div id="effect"></div> 
     <div class="project-card">
     
       <h2>SocialBay is your Social Media Account sharing platform.</h2>
       </br>
-      
+      <div data-aos="zoom-out-right">
       <div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
         <div class="card-header">Why SocialBay?</div>
         <div class="card-body">
@@ -121,9 +129,11 @@
           <p class="card-text">Let all your friends/co-workers know you are on Social Media. A single page dedicated only to all your accounts</p>
         </div>
       </div>
-    
+    </div>
     </br>
+    <div data-aos="zoom-out-left">
     <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+    
       <div class="card-header">How to start?</div>
       <div class="card-body">
         <h5 class="card-title">Only 3 Steps to Start.</h5>
@@ -132,10 +142,16 @@
       </div>
     </div>
     </div>
+
+    </div>
   </center>
   
-  
+   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
+    AOS.init();
+  </script>
+  <script>
+  
     var x=0;
     var textEffect = "Welcome to SocialBay"
     var container = document.getElementById('effect');
